@@ -5,8 +5,6 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 
 const PostCard = ({ post }) => {
-  console.log(post);
-
   return (
     <div className='bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8'>
       <div className='relative overflow-hidden shadow-md pb-80 mb-6'>
@@ -21,7 +19,7 @@ const PostCard = ({ post }) => {
         <Link href={`/post/${post.slug}`}>{post.title}</Link>
       </h1>
       <div className='block lg:flex text-center items-center justify-center  mb-8 w-full'>
-        <div className='flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8'>
+        <div className='flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8 pb-2'>
           <img
             alt={post.author.name}
             height='30px'
@@ -33,16 +31,16 @@ const PostCard = ({ post }) => {
             {post.author.name}
           </p>
         </div>
-        <div className='text-sm text-gray-700'>
+        <div className='text-sm text-gray-700 pb-2'>
           <DateRangeIcon style={{ color: '#A34CA2' }} />
           <span className='ml-1'>
             {moment(post.createdAt).format('DD MMM, YYYY')}
           </span>
         </div>
-        <div className='text-sm text-gray-700 px-4'>
+        <div className='text-sm text-gray-700 px-4 pb-2'>
           <FlightTakeoffIcon style={{ color: '#A34CA2' }} />
           <span className='ml-1'>
-            {moment(post.tripDate).format('DD MMM, YYYY')}
+            {moment(post.tripDate).format('MMM YYYY')}
           </span>
         </div>
       </div>
