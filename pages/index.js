@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import { PostCard, Categories, PostWidget } from '../components';
+import { FeaturedPosts } from '../sections';
 import { getPosts } from '../services';
+import Loader from 'react-loaders';
 
 export default function Home({ posts }) {
   return (
@@ -11,6 +13,7 @@ export default function Home({ posts }) {
         <meta name='description' content='Blog about travels' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <FeaturedPosts />
 
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
         <div className='lg:col-span-8 col-span-1'>

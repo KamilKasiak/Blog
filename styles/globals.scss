@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+$primary-color: #bc2cae;
+@import 'loaders.css/src/animations/ball-rotate.scss';
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
 html,
@@ -81,4 +84,22 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
+  position: fixed;
+  left: 50vw;
+  right: 50vw;
+  margin: auto;
+  top: 50vh;
+  bottom: auto;
+  width: 50px;
+  height: 50px;
+  animation: fadeOut 1s 1s;
+  animation-fill-mode: forwards;
+  z-index: 99;
 }
