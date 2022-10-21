@@ -2,11 +2,14 @@ import React from 'react';
 import moment from 'moment';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const PostDetail = ({ post }) => {
+  // console.log(post);
+
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
-
+    // console.log({ type });
     if (obj) {
       if (obj.bold) {
         modifiedText = <b key={index}>{text}</b>;
@@ -73,6 +76,31 @@ const PostDetail = ({ post }) => {
             src={obj.src}
           />
         );
+      // case 'buletted-list':
+      //   return (
+      //     <ul>
+      //       <li key={index} className='mb-8'>
+      //         <p>
+      //           {modifiedText.map((item, i) => (
+      //             <React.Fragment key={i}>{item}</React.Fragment>
+      //           ))}
+      //         </p>
+      //       </li>
+      //     </ul>
+      //   );
+      // case 'class':
+      //   return (
+      //     <div>
+      //       <img
+      //         className='relative '
+      //         key={index}
+      //         alt={obj.title}
+      //         height={300}
+      //         width={300}
+      //         src={obj.children[1].src}
+      //       />
+      //     </div>
+      //   );
       default:
         return modifiedText;
     }

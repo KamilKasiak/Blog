@@ -19,7 +19,6 @@ const Categories = () => {
         <Link href={`/category/${category.slug}`} key={category.slug}>
           <span className='cursor-pointer block pb-2 mb-3'>
             {category.name}
-            {console.log(category)}
           </span>
         </Link>
       ))}
