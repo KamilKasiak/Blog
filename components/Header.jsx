@@ -51,7 +51,7 @@ const Header = () => {
             </div>
           ))}
           {continentExpanded ? (
-            <div className='relative flex w-screen justify-end right-60 z-50'>
+            <div className='relative flex w-screen justify-end right-60 z-50 dropMenu'>
               <div className='absolute bg-white shadow-lg rounded-lg py-4 px-6 mb-4 pb-4 w-1/5'>
                 <h3 className='text-xl mb-3 font-semibold border-b pb-2 px-2'>
                   Countries

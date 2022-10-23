@@ -1,110 +1,13 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import moment from 'moment';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { RichText } from '@graphcms/rich-text-react-renderer';
 
 const PostDetail = ({ post }) => {
-  // console.log(post);
+  const postRef = useRef();
 
-  const getContentFragment = (index, text, obj, type) => {
-    let modifiedText = text;
-    // console.log({ type });
-    if (obj) {
-      if (obj.bold) {
-        modifiedText = <b key={index}>{text}</b>;
-      }
-
-      if (obj.italic) {
-        modifiedText = <em key={index}>{text}</em>;
-      }
-
-      if (obj.underline) {
-        modifiedText = <u key={index}>{text}</u>;
-      }
-    }
-
-    switch (type) {
-      case 'heading-two':
-        return (
-          <h2 key={index} className='text-2xl font-semibold mb-4'>
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </h2>
-        );
-      case 'heading-three':
-        return (
-          <h3 key={index} className='text-xl font-semibold mb-4'>
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </h3>
-        );
-      case 'heading-four':
-        return (
-          <h4 key={index} className='text-md font-semibold mb-4'>
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </h4>
-        );
-      case 'heading-five':
-        return (
-          <h5 key={index} className='text-sm font-semibold mb-4'>
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </h5>
-        );
-      case 'paragraph':
-        return (
-          <p key={index} className='mb-8'>
-            {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
-            ))}
-          </p>
-        );
-
-      case 'image':
-        return (
-          <img
-            key={index}
-            alt={obj.title}
-            height={obj.height}
-            width={obj.width}
-            src={obj.src}
-          />
-        );
-      // case 'buletted-list':
-      //   return (
-      //     <ul>
-      //       <li key={index} className='mb-8'>
-      //         <p>
-      //           {modifiedText.map((item, i) => (
-      //             <React.Fragment key={i}>{item}</React.Fragment>
-      //           ))}
-      //         </p>
-      //       </li>
-      //     </ul>
-      //   );
-      // case 'class':
-      //   return (
-      //     <div>
-      //       <img
-      //         className='relative '
-      //         key={index}
-      //         alt={obj.title}
-      //         height={300}
-      //         width={300}
-      //         src={obj.children[1].src}
-      //       />
-      //     </div>
-      //   );
-      default:
-        return modifiedText;
-    }
-  };
+  // console.log(post.content.raw.children);
 
   return (
     <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
@@ -143,16 +46,60 @@ const PostDetail = ({ post }) => {
           </div>
         </div>
         <h1 className='mb-8 text-3xl font-semibold'> {post.title}</h1>
-        {/* {console.log(post.content.raw)} */}
-        {post.content.raw.children.map((typeObj, index) => {
-          {
-            const children = typeObj.children.map((item, itemIndex) =>
-              getContentFragment(itemIndex, item.text, item)
-            );
 
-            return getContentFragment(index, children, typeObj, typeObj.type);
-          }
-        })}
+        <React.Fragment>
+          {/* <RichText content={post.content.raw.children} /> */}
+
+          <RichText
+            content={post.content.raw.children}
+            references={postRef}
+            renderers={{
+              h1: ({ children }) => (
+                <h1 className={`text-4xl font-semibold`}>
+                  <br />
+                  <br />
+                  {children} <br />
+                  <br />
+                </h1>
+              ),
+              h2: ({ children }) => (
+                <h2 className={`text-2xl font-semibold`}>
+                  <br />
+                  {children}
+                  <br />
+                  <br />
+                </h2>
+              ),
+              h3: ({ children }) => (
+                <h3 className={`text-lg font-semibold`}>
+                  <br />
+                  <br />
+                  {children}
+                  <br />
+                  <br />
+                </h3>
+              ),
+              a: ({ children, href, openInNewTab }) => (
+                <a
+                  href={href}
+                  target={openInNewTab ? '_blank' : '_self'}
+                  style={{ color: '#bc2cae' }}
+                  rel='noreferrer'
+                >
+                  {children}
+                </a>
+              ),
+              bold: ({ children }) => <strong>{children}</strong>,
+              Asset: {
+                text: () => (
+                  <div>
+                    <p>text plain</p>
+                  </div>
+                ),
+              },
+            }}
+          />
+        </React.Fragment>
       </div>
     </div>
   );

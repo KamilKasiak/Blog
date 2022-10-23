@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  ul,
+  ol {
+    list-style: revert;
+  }
+}
+
 $primary-color: #bc2cae;
 @import 'loaders.css/src/animations/ball-rotate.scss';
 
@@ -17,7 +24,6 @@ body {
     content: '';
     width: 100%;
     height: 100vh;
-
     background: rgb(255, 255, 255);
     background: -moz-linear-gradient(
       321deg,
@@ -106,4 +112,8 @@ a {
   background-color: #bc2cae;
   width: 100%;
   height: 50vh;
+}
+
+.dropMenu {
+  right: 25%;
 }
