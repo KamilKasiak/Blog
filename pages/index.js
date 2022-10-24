@@ -11,6 +11,7 @@ export default function Home({ posts }) {
         <title>Urlop Aktywnie</title>
         <meta name='description' content='Blog about travels' />
         <link rel='icon' href='/favicon.ico' />
+        <script src='https://js.stripe.com/v3/'></script>
       </Head>
       <FeaturedPosts />
 

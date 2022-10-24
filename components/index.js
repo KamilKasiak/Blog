@@ -9,3 +9,4 @@ export { default as CommentsForm } from './CommentsForm';
 export { default as PostDetail } from './PostDetail';
 export { default as FeaturedPostCard } from './FeaturedPostCard';
 export { default as PostMenu } from './PostMenu';
+export { default as BuyMeCoffe } from './BuyMeCoffe';
