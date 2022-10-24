@@ -1,8 +1,7 @@
 # Our Travel Blog
 
->
-
-<!-- [_here_](https://kasiakkamil.com/). -->
+> Site available here:
+> [_here_](https://urlopaktywnie.pl/).
 
 ## Table of Contents
 
@@ -32,21 +31,25 @@
 - Sass - version 1.55
 - Tailwind CSS - version 3.1.8
 - JavaScript
+- Stripe - 10.15.0
 - CSS3
 
 ## Features
 
 <!-- List the ready features here: -->
 
-- possibility to add post using GraphCMS
+- possibility to manage posts using GraphCMS (create, edit, remove)
+- sort post by
 - easy navigate throught pages
 - mobile optimization
+- posibility to buy coffee for post author
 
 ## Screenshots
 
-<!-- ![Example screenshot](./src/assets/img/home.png)
-![Example screenshot](./src/assets/img/portfolio.png)
-![Example screenshot](./src/assets/img/mobile.png) -->
+![Example screenshot](./public/home.jpg)
+![Example screenshot](./public/carousel.jpg)
+
+<!-- ![Example screenshot](./src/assets/img/mobile.png) -->
 
 ## Project Status
 
@@ -60,7 +63,7 @@ Project is: _in progress_
 
 Room for improvement:
 
--
+- some visual aspects
 
 ## Contact
 
