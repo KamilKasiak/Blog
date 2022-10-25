@@ -4,7 +4,7 @@ import 'tailwindcss/tailwind.css';
 import sadCat from '../../public/sadCat.jpg';
 import Image from 'next/image';
 
-export default function success() {
+export default function Cancel() {
   useEffect(() => {
     const timer = setTimeout(() => {
       window.location.href = 'http://urlopaktywnie.pl/';
@@ -19,7 +19,7 @@ export default function success() {
           Coś poszło nie tak :(
         </h1>
         <div className=''>
-          <Image src={sadCat} className='absolute object-cover' />
+          <Image src={sadCat} alt='sad Cat' className='absolute object-cover' />
         </div>
 
         <p className='text-xl'>

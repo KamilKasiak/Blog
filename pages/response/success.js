@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import 'tailwindcss/tailwind.css';
 import thankYou from '../../public/thankYou.jpg';
 
-export default function success() {
+export default function Success() {
   useEffect(() => {
     const timer = setTimeout(() => {
       window.location.href = 'http://urlopaktywnie.pl/';
@@ -18,7 +18,11 @@ export default function success() {
           Dziękuję za kawę!
         </h1>
         <div className=''>
-          <Image src={thankYou} className='absolute object-cover' />
+          <Image
+            src={thankYou}
+            alt='thank You'
+            className='absolute object-cover'
+          />
         </div>
 
         <p className='text-xl'>
