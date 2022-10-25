@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 import 'tailwindcss/tailwind.css';
 import { PostCard, Categories, PostWidget } from '../components';
 import { FeaturedPosts } from '../sections';
@@ -11,7 +12,7 @@ export default function Home({ posts }) {
         <title>Urlop Aktywnie</title>
         <meta name='description' content='Blog about travels' />
         <link rel='icon' href='/favicon.ico' />
-        <script src='https://js.stripe.com/v3/'></script>
+        <Script src='https://js.stripe.com/v3/'></Script>
       </Head>
       <FeaturedPosts />
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>

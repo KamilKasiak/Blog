@@ -34,7 +34,7 @@ const Header = () => {
           className='hidden md:float-left md:contents md:relative'
         >
           {categories.map((category, index) => (
-            <div>
+            <div key={category.slug}>
               {/* <Link key={category.slug} href={`/category/${category.slug}`}> */}
               <span
                 className='md: float-right mt-2 align-middle text-white ml-4 font-semibold text-sm cursor-pointer'
@@ -58,6 +58,7 @@ const Header = () => {
                 </h3>
                 {posts.map((post, index) => (
                   <div
+                    key={index}
                     onClick={() => {
                       setContinentExpanded(false);
                     }}

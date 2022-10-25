@@ -3,6 +3,7 @@ import moment from 'moment';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import { RichText } from '@graphcms/rich-text-react-renderer';
+import Image from 'next/image';
 
 const PostDetail = ({ post }) => {
   const postRef = useRef();
@@ -10,18 +11,21 @@ const PostDetail = ({ post }) => {
   // console.log(post.content.raw.children);
 
   return (
-    <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
+    <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8 p-2'>
       <div className='relative overflow-hidden shadow-md mb-6'>
-        <img
+        <Image
           src={post.featuredImage.url}
           alt={post.title}
+          layout='responsive'
+          width='1500'
+          height='1125'
           className='object-top h-full w-full rounded-t-lg'
         />
       </div>
       <div className='px-4 lg:px-0'>
         <div className='flex items-center mb-8 w-full'>
           <div className='flex items-center mb-4 lg:mb-0 w-full lg:w-auto mr-8'>
-            <img
+            <Image
               alt={post.author.name}
               height='40px'
               width='40px'
