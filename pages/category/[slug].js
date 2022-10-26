@@ -1,15 +1,15 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 import { getCategories, getCategoryPost } from '../../services';
 import { PostCard, Categories } from '../../components';
 
 const CategoryPost = ({ posts }) => {
-  const router = useRouter();
+  // const router = useRouter();
 
-  if (router.isFallback) {
-    console.log(`Building slug: ${slug}`);
-  }
+  // if (router.isFallback) {
+  //   console.log(`Building slug: ${slug}`);
+  // }
   return (
     <div className='container mx-auto px-10 mb-8'>
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
