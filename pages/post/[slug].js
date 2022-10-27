@@ -57,6 +57,10 @@ export async function getStaticProps({ params }) {
   const data = await getPostDetails(params.slug);
   return {
     props: { post: data },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 10, // In seconds
   };
 }
 
@@ -66,6 +70,6 @@ export async function getStaticPaths() {
   const posts = await getPosts();
   return {
     paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
-    fallback: false,
+    fallback: 'blocking',
   };
 }

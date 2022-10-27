@@ -43,7 +43,7 @@ const PostCard = ({ post }) => {
         <div className='text-sm text-gray-700 px-4 pb-2'>
           <FlightTakeoffIcon style={{ color: '#A34CA2' }} />
           <span className='ml-1'>
-            {moment(post.tripDate).format('MMM YYYY')}
+            {moment(post.tripDate).format('MMM, YYYY')}
           </span>
         </div>
       </div>

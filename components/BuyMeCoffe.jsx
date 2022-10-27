@@ -45,7 +45,7 @@ const BuyMeCoffe = () => {
         >
           <span className='transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-md rounded-full text-white px-8 py-3 cursor-pointer'>
             <CoffeeIcon />
-            <span className='ml-2'>Mała kawa :)</span>
+            <span className='ml-2'>Mała kawa 7zł :)</span>
           </span>
         </div>
       </div>
