@@ -20,9 +20,9 @@ const BuyMeCoffe = () => {
   };
 
   return (
-    <div className='items-center flex flex-col justify-center mb-8 p-12 bg-black bg-opacity-30 rounded-lg relative mt-20 text-center text-white text-center gap-10'>
+    <div className='items-center flex flex-col justify-center mb-8 p-8 bg-black bg-opacity-30 rounded-lg relative mt-20 text-center text-white text-center gap-10'>
       <h3 className='text-xl font-semibold'>Doceń Autora</h3>
-      <p>
+      <p className='text-justify text-xs lg:text-base'>
         Przygotowanie się do wycieczki często zajmuje mi wiele godzin, a nawet
         dni ciężkich poszukiwań w internecie. Owocuje to tym, że nie muszę go
         tracić na miejscu i mogę dłużej cieszyć się urlopem bez zbędnych
@@ -45,7 +45,7 @@ const BuyMeCoffe = () => {
         >
           <span className='transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-md rounded-full text-white px-8 py-3 cursor-pointer'>
             <CoffeeIcon />
-            <span className='ml-2'>Małe espresso 5zł</span>
+            <span className='ml-2'>Mała kawa :)</span>
           </span>
         </div>
       </div>

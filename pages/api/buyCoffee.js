@@ -9,7 +9,7 @@ export default async (req, res) => {
     payment_method_types: ['blik', 'p24'],
     line_items: [
       {
-        price: 'price_1LwKsSHoNzN4jX2Z6hfZVIO5',
+        price: 'price_1LwKqyHoNzN4jX2ZlmAZjU7f',
         adjustable_quantity: {
           enabled: true,
           minimum: 1,

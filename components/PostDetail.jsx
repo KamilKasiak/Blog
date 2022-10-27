@@ -49,7 +49,9 @@ const PostDetail = ({ post }) => {
             </span>
           </div>
         </div>
-        <h1 className='mb-8 text-3xl font-semibold'> {post.title}</h1>
+        <h1 className='mb-8 text-2xl lg:text-3xl font-semibold'>
+          {post.title}
+        </h1>
 
         <React.Fragment>
           {/* <RichText content={post.content.raw.children} /> */}
@@ -59,7 +61,7 @@ const PostDetail = ({ post }) => {
             references={postRef}
             renderers={{
               h1: ({ children }) => (
-                <h1 className={`text-4xl font-semibold`}>
+                <h1 className={`text-3xl lg:text-4xl font-semibold`}>
                   <br />
                   <br />
                   {children} <br />
@@ -67,7 +69,7 @@ const PostDetail = ({ post }) => {
                 </h1>
               ),
               h2: ({ children }) => (
-                <h2 className={`text-2xl font-semibold`}>
+                <h2 className={`text-xl lg:text-2xl font-semibold text-center`}>
                   <br />
                   {children}
                   <br />
@@ -75,11 +77,9 @@ const PostDetail = ({ post }) => {
                 </h2>
               ),
               h3: ({ children }) => (
-                <h3 className={`text-lg font-semibold`}>
-                  <br />
+                <h3 className={`text-base lg:text-lg font-semibold`}>
                   <br />
                   {children}
-                  <br />
                   <br />
                 </h3>
               ),
@@ -93,6 +93,14 @@ const PostDetail = ({ post }) => {
                   {children}
                 </a>
               ),
+              p: ({ children }) => (
+                <div className='text-justify pt-2 pb-2 text-sm lg:text-base'>
+                  <p>{children}</p>
+                </div>
+              ),
+              // img: ({ children }) => (
+              //   <div className='flex relative w-40 h-40'>{children}</div>
+              // ),
               bold: ({ children }) => <strong>{children}</strong>,
               Asset: {
                 text: () => (
