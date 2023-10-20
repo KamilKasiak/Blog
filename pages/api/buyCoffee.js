@@ -6,7 +6,7 @@ export default async (req, res) => {
   const sessionStripe = await stripe.checkout.sessions.create({
     success_url: 'http://urlopaktywnie.pl/response/success',
     cancel_url: 'http://urlopaktywnie.pl/response/cancel',
-    payment_method_types: ['blik', 'p24'],
+    payment_method_types: ['blik'],
     line_items: [
       {
         price: 'price_1LwKqyHoNzN4jX2ZlmAZjU7f',
